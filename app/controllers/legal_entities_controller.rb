@@ -1,0 +1,2 @@
+class LegalEntitiesController < ApplicationController
+end

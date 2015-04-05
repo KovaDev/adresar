@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adresar</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>Adresar za pravna i fizička lica</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9jnE9Hgcv2UVXaXp96PauL-2z5JUY1tE">
+    </script>
+
 </head>
 <body>
 
-<%= yield %>
+<div id="wrapper">
+    <header id="main-header">
+        <div id="nav-wrapper">
+            <div id="logo">
+                <h1><span>WEB</span> ADRESAR</h1>
+                <!--<hr />-->
+            </div>
+            <nav id="main-nav" class="nav">
+                <a href="#" id="pull"><i class="fa fa-bars">&nbsp;</i>Meni</a>
+                <ul>
+                    <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Pocetna</a></li>
+                    <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Prijava</a></li>
+                    <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Prijava</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content-wrap">
+
+        <div id="content">
+
+            <%= yield %>
+
+        </div> <!-- CONTENT END -->
+
+    </div> <!-- CONTENT WRAP END -->
+
+    <footer id="footer">
+        <section id="footer-top">
+
+            <div id="footer-top-inner">
+                <div id="footer-top-left">
+                    <div>
+                        <i class="fa fa-facebook fa-2x"></i>
+                        <i class="fa fa-twitter fa-2x"></i>
+                        <i class="fa fa-pinterest fa-2x"></i>
+                    </div>
+                </div>
+
+                <div id="footer-nav">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Pocetna</a></li>
+                        <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Prijava</a></li>
+                        <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Prijava</a></li>
+                    </ul>
+                </div>
+
+                <div id="footer-top-right">
+                    <div>
+                        <h1>WEB ADRESAR 2014</h1>
+                        <hr id="profile-hr" />
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="footer-bottom">
+            <p>Design by <a class="red" href="http://about.me/ivan.kovac">&lt;kovadev&#47;&gt;</a> 2014</p>
+        </section>
+
+    </footer>
+
+    <div id="confirm-dialog"></div>
+
+</div> <!-- WRAPPER END -->
+
+<a id="back-to-top" href="#" class="back-to-top black" role="button"><i class="fa fa-angle-double-up fa-3x"></i></a>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
