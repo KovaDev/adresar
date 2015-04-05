@@ -1,0 +1,41 @@
+<footer id="footer">
+    <section id="footer-top">
+
+        <div id="footer-top-inner">
+            <div id="footer-top-left">
+                <div>
+                    <i class="fa fa-facebook fa-2x"></i>
+                    <i class="fa fa-twitter fa-2x"></i>
+                    <i class="fa fa-pinterest fa-2x"></i>
+                </div>
+            </div>
+
+            <div id="footer-nav">
+                <ul>
+                <li><a href="#"><i class="fa fa-sign-in">&nbsp;</i>Pocetna</a></li>
+                <% if user_signed_in? %>
+                    <li>
+                        <i class="fa fa-sign-in">&nbsp;</i><%= link_to 'Prijava', :new_user_session %>
+                    </li>
+                    <li>
+                        <i class="fa fa-sign-in">&nbsp;</i><%= link_to 'Registracija', :new_user_registration %>
+                    </li>
+                <% end %>
+                </ul>
+            </div>
+
+            <div id="footer-top-right">
+                <div>
+                    <h1>WEB ADRESAR 2014</h1>
+                    <hr id="profile-hr" />
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="footer-bottom">
+        <p>Design by <a class="red" href="http://about.me/ivan.kovac">&lt;kovadev&#47;&gt;</a> 2014</p>
+    </section>
+
+</footer>

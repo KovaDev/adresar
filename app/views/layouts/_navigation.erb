@@ -1,0 +1,27 @@
+<header id="main-header">
+    <div id="nav-wrapper">
+        <div id="logo">
+            <h1><span>WEB</span> ADRESAR</h1>
+            <!--<hr />-->
+        </div>
+        <nav id="main-nav" class="nav">
+            <a href="#" id="pull"><i class="fa fa-bars">&nbsp;</i>Meni</a>
+            <ul>
+                <li><i class="fa fa-sign-in">&nbsp;</i><%= link_to 'Početna', root_path %></li>
+                <% if user_signed_in? %>
+                    <li>
+                        <i class="fa fa-sign-in"></i><%= link_to 'Odjava',
+                                                                 :destroy_user_session, :method => :delete %>
+                    </li>
+                <% else %>
+                    <li>
+                      <i class="fa fa-sign-in"></i><%= link_to 'Prijava', :new_user_session %>
+                    </li>
+                    <li>
+                      <i class="fa fa-sign-in"></i><%= link_to 'Registracija', :new_user_registration %>
+                    </li>
+                <% end %>
+            </ul>
+        </nav>
+    </div>
+</header>

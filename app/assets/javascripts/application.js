@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.tooltipster.min
+//= require jquery.validate.min
+//= require additional-methods.min
 //= require_tree .

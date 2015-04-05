@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :legal_entities
   devise_for :users
-
-  root 'home#index'
+  resources :legal_entities
+  root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
