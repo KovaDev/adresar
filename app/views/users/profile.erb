@@ -1,0 +1,46 @@
+<div id="profile-wrapper">
+
+    <%= render 'users/navigation' %>
+
+    <div id="profile-info">
+
+        <div class="profile-title"><h1>Pregled korisničkih podataka</h1><hr id="profile-hr" /></div>
+
+        <table class="table" id="user-profile-table">
+            <tr>
+                <th style="width: 50%; text-align: right;">Opšti</th>
+                <th style="width: 50%; text-align: left;">podaci</th>
+            </tr>
+            <tr>
+                <td><i class="fa fa-user"></i>&nbsp;&nbsp;Korisničko ime:</td>
+                <td><%= @user.username %></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-user"></i>&nbsp;&nbsp;Ime:</td>
+                <td><?php echo $user['ime']; ?></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-user"></i>&nbsp;&nbsp;Prezime:</td>
+                <td><?php echo $user['prezime']; ?></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-user"></i>&nbsp;&nbsp;Tip korisnika:</td>
+                <td><?php echo $user['tip_korisnika']; ?></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-envelope"></i>&nbsp;&nbsp;E-mail:</td>
+                <td><%= @user.email %></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-phone"></i>&nbsp;&nbsp;Broj telefona:</td>
+                <td><?php echo $user['broj_telefona'] ? $user['broj_telefona'] : '-' ?></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-globe"></i>&nbsp;&nbsp;Web:</td>
+                <td><?php echo $user['web'] ? $user['web'] : '-' ?></td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>

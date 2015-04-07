@@ -2,23 +2,25 @@
     <div id="nav-wrapper">
         <div id="logo">
             <h1><span>WEB</span> ADRESAR</h1>
-            <!--<hr />-->
         </div>
         <nav id="main-nav" class="nav">
             <a href="#" id="pull"><i class="fa fa-bars">&nbsp;</i>Meni</a>
             <ul>
-                <li><i class="fa fa-sign-in">&nbsp;</i><%= link_to 'Početna', root_path %></li>
+                <li><a href="<%= root_path %>"><i class="fa fa-sign-in">&nbsp;</i>Pocetna</a></li>
                 <% if user_signed_in? %>
                     <li>
-                        <i class="fa fa-sign-in"></i><%= link_to 'Odjava',
-                                                                 :destroy_user_session, :method => :delete %>
+                        <a href="<%= profile_path({:id => current_user.id}) %>">
+                            <i class="fa fa-sign-in">&nbsp;</i><%= current_user.username %></a>
+                    </li>
+                    <li>
+                        <%= link_to 'Odjava', :destroy_user_session, :method => :delete %>
                     </li>
                 <% else %>
                     <li>
-                      <i class="fa fa-sign-in"></i><%= link_to 'Prijava', :new_user_session %>
+                        <a href="<%= new_user_session_path %>"><i class="fa fa-sign-in">&nbsp;</i>Prijava</a>
                     </li>
                     <li>
-                      <i class="fa fa-sign-in"></i><%= link_to 'Registracija', :new_user_registration %>
+                        <a href="<%= new_user_registration_path %>"><i class="fa fa-sign-in">&nbsp;</i>Registracija</a>
                     </li>
                 <% end %>
             </ul>

@@ -1,0 +1,63 @@
+<div class="profile-title"><h1>Pregled kontakt podataka za pravno lice: <%= @entity.name %></h1><hr id="profile-hr" /></div>
+
+<div class="subject-details">
+
+    <table class="table" id="pravno_lice_table">
+        <tr>
+            <th>Pregled podataka</th>
+            <th>Podatak</th>
+        </tr>
+        <tr>
+            <td><i class="fa fa-briefcase"></i>&nbsp;&nbsp;Naziv</td>
+            <td><%= @entity.name %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-user"></i>&nbsp;&nbsp;Odgovorno lice</td>
+            <td><%= @entity.owner %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Država i grad</td>
+            <td><%= @entity.country %>, <%= @entity.city %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Poštanski broj</td>
+            <td><%= @entity.postal_code %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Ulica i broj</td>
+            <td><%= @entity.address %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-phone"></i>&nbsp;&nbsp;Telefon</td>
+            <td><%= @entity.phone %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-fax"></i>&nbsp;&nbsp;Faks</td>
+            <td><%= @entity.fax %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-mobile"></i>&nbsp;&nbsp;Mobilni telefon</td>
+            <td><%= @entity.mobile %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-envelope"></i>&nbsp;&nbsp;E-mail</td>
+            <td><%= @entity.email %></td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-globe"></i>&nbsp;&nbsp;Web</td>
+            <td><%= @entity.web %></td>
+        </tr>
+        <% if current_user.is_admin? %>
+        <tr>
+            <td><i class="fa fa-cog"></i>&nbsp;&nbsp;Akcije</td>
+            <td style="text-align: right;">
+                <a href="#"><i class="fa fa-pencil">&nbsp;</i>Izmijeni podatke</a>
+                |<a href="#" class="delete"><i class="fa fa-trash">&nbsp;</i>Obriši subjekat</a>
+            </td>
+        </tr>
+        <% end %>
+  </table>
+
+</div>
+
+<!-- Map placeholder -->
