@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :physical_entities
   devise_for :users
   resources :legal_entities
   get 'profile/:id', to: 'users#profile', as: 'profile'

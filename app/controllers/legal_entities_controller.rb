@@ -27,7 +27,12 @@ class LegalEntitiesController < ApplicationController
   end
 
   def update
-
+    @entity = LegalEntity.find(params[:id])
+    if @entity.update_attributes(legal_entity_params)
+      redirect_to @entity
+    else
+      render 'edit'
+    end
   end
 
   private
