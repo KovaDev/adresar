@@ -1,8 +1,5 @@
 class LegalEntitiesController < ApplicationController
 
-  #geocoded_by :address
-  #after_validation :geocode
-
   before_action :admin_only, only: [:new, :edit, :destroy]
 
   def new

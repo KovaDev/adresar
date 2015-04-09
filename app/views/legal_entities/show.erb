@@ -51,7 +51,7 @@
         <tr>
             <td><i class="fa fa-cog"></i>&nbsp;&nbsp;Akcije</td>
             <td style="text-align: right;">
-                <a href="#"><i class="fa fa-pencil">&nbsp;</i>Izmijeni podatke</a>
+                <a href="<%= edit_legal_entity_path %>"><i class="fa fa-pencil">&nbsp;</i>Izmijeni podatke</a>
                 |<a href="#" class="delete"><i class="fa fa-trash">&nbsp;</i>Obriši subjekat</a>
             </td>
         </tr>
@@ -60,4 +60,9 @@
 
 </div>
 
-<!-- Map placeholder -->
+<div id="map-wrapper">
+  <div id="gmap_canvas">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=460x360&sensor=false&zoom=16&markers=#{@entity.latitude}%2C#{@entity.longitude}" %>
+  </div>
+</div>
+

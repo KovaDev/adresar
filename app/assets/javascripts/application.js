@@ -17,3 +17,4 @@
 //= require jquery.validate.min
 //= require additional-methods.min
 //= require_tree .
+

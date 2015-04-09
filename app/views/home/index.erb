@@ -1,7 +1,34 @@
 <div id="main-content">
-    <h1>WELCOME</h1>
 
-    <% (0..50).each do |var| %>
-        <h2>Red broj: <%= "#{var}" %></h2>
-    <% end %>
+    <%= render 'search' %>
+
+    <%= render 'filters' %>
+
+  <div id="table-wrapper">
+
+    <div id="main-table-wrapper">
+      <table class="table" id="results">
+        <tr>
+          <th>#</th>
+          <th><i class="fa fa-sort"></i>&nbsp;&nbsp;Naziv pravnog lica</th>
+          <th>Link za detalje</th>
+        </tr>
+        <% @entities.each do |entity| %>
+        <tr>
+          <td><%= entity.id %></td>
+          <td><%= entity.name %></td>
+          <td><i class="fa fa-user"></i>&nbsp;<%= link_to 'Kontakt podaci', legal_entity_path(entity) %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+
+    </div>
+
+    <%= render 'actions' %>
+
+
+  </div>
+
 </div>
+

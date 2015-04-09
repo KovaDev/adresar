@@ -6,6 +6,7 @@ ready = undefined;
 ready = ->
 
   backToTop()
+  toggleAbcNavigation()
   return
 
 $(document).ready ready

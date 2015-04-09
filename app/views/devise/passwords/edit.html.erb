@@ -1,22 +1,52 @@
-<h2>Change your password</h2>
+<div id="profile-wrapper">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+    <%= render 'users/navigation' %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+    <div id="profile-info">
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+        <div class="profile-title"><h1>Promjena lozinke</h1><hr id="profile-hr" /></div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+        <div id="user-password-form-wrapper" class="form-wrapper slideLeft">
 
-<%= render "devise/shared/links" %>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+            html: { method: :put, id: 'id="admin-password-form"' }) do |f| %>
+
+            <%= devise_error_messages! %>
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="col1">
+
+                <div class="label-wrapper">
+                    <%= f.label :password, 'Lozinka' %><br />
+                </div>
+                <div class="input-wrapper">
+                    <span class="form-icon"><i class="fa fa-lock"></i></span>
+                    <%= f.password_field :password, autofocus: true, autocomplete: 'off' %>
+                </div>
+
+                <div class="input-wrapper" id="register-submit-wrapper">
+                    <%= f.submit 'Sačuvaj izmjene', id: 'submit-admin-change-password' %>
+                </div>
+
+            </div>
+
+            <div class="col2">
+
+                <div class="label-wrapper">
+                    <%= f.label :password_confirmation, 'Potvrda lozinke' %>
+                </div>
+                <div class="input-wrapper">
+                    <span class="form-icon"><i class="fa fa-lock"></i></span>
+                    <%= f.password_field :password_confirmation, autocomplete: 'off' %>
+                </div>
+
+            </div>
+
+        <% end %>
+
+        </div>
+
+    </div>
+
+</div>
+
