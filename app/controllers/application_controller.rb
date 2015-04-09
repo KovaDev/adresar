@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :remember_me) }
     end
 
+    def admin_only
+      unless current_user.is_admin?
+        redirect_to root_path
+      end
+    end
+
 end

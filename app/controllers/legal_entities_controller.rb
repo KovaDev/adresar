@@ -3,7 +3,7 @@ class LegalEntitiesController < ApplicationController
   #geocoded_by :address
   #after_validation :geocode
 
-  #before_action current_user.is_admin?
+  before_action :admin_only, only: [:new, :edit, :destroy]
 
   def new
     @entity = LegalEntity.new
@@ -33,6 +33,9 @@ class LegalEntitiesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
   end
 
   private

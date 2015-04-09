@@ -1,5 +1,7 @@
 class PhysicalEntitiesController < ApplicationController
 
+  before_action :admin_only, only: [:new, :edit, :destroy]
+
   def new
     @entity = PhysicalEntity.new
   end
@@ -28,6 +30,9 @@ class PhysicalEntitiesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
   end
 
   private

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   resources :physical_entities
   devise_for :users
   resources :legal_entities

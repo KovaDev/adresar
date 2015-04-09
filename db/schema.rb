@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407210749) do
+ActiveRecord::Schema.define(version: 20150407234801) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "legal_entities", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -29,7 +35,10 @@ ActiveRecord::Schema.define(version: 20150407210749) do
     t.float    "latitude",    limit: 24
     t.float    "longitude",   limit: 24
     t.string   "postal_code", limit: 255
+    t.integer  "category_id", limit: 4
   end
+
+  add_index "legal_entities", ["category_id"], name: "index_legal_entities_on_category_id", using: :btree
 
   create_table "physical_entities", force: :cascade do |t|
     t.string   "first_name",  limit: 255
@@ -68,4 +77,5 @@ ActiveRecord::Schema.define(version: 20150407210749) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "legal_entities", "categories"
 end
