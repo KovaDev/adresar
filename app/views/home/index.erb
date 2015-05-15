@@ -1,34 +1,29 @@
 <div id="main-content">
 
-    <%= render 'search' %>
+  <section id="search-section">
 
-    <%= render 'filters' %>
+      <%= form_tag(root_path, :method => 'get', id: 'search-form') do %>
+
+      <div id="search-input-wrapper">
+            <span class="form-icon"><i class="fa fa-search"></i></span>
+            <%= text_field_tag :term, params[:term], placeholder: 'Unesite pojam za pretragu' %>
+      </div>
+      <div id="search-submit-wrapper">
+            <input type="submit" id="btn-search" value="Pretraga" />
+      </div>
+
+  </section>
+
+  <%= render 'home/partials/filters' %>
 
   <div id="table-wrapper">
 
-    <div id="main-table-wrapper">
-      <table class="table" id="results">
-        <tr>
-          <th>#</th>
-          <th><i class="fa fa-sort"></i>&nbsp;&nbsp;Naziv pravnog lica</th>
-          <th>Link za detalje</th>
-        </tr>
-        <% @entities.each do |entity| %>
-        <tr>
-          <td><%= entity.id %></td>
-          <td><%= entity.name %></td>
-          <td><i class="fa fa-user"></i>&nbsp;<%= link_to 'Kontakt podaci', legal_entity_path(entity) %>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-
-    </div>
-
-    <%= render 'actions' %>
-
+    <%= render 'home/partials/list' %>
+    <%= render 'home/partials/actions' %>
 
   </div>
+
+  <% end %>
 
 </div>
 

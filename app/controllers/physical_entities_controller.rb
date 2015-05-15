@@ -1,6 +1,8 @@
-class PhysicalEntitiesController < ApplicationController
+class PhysicalEntitiesController < BaseController
 
+  before_filter :authenticate_user!
   before_action :admin_only, only: [:new, :edit, :destroy]
+  before_action :find_physical_entity, only: [:show, :edit, :update, :destroy]
 
   def new
     @entity = PhysicalEntity.new
@@ -16,15 +18,14 @@ class PhysicalEntitiesController < ApplicationController
   end
 
   def show
-    @entity = PhysicalEntity.find(params[:id])
   end
 
   def edit
-    @entity = PhysicalEntity.find(params[:id])
+    @entity.destroy
+    redirect_to root_path
   end
 
   def update
-    @entity = PhysicalEntity.find(params[:id])
     if @entity.update_attributes(physical_entity_params)
       redirect_to @entity
     else
@@ -41,6 +42,10 @@ class PhysicalEntitiesController < ApplicationController
     params.require(:physical_entity).permit(:first_name, :last_name, :address, :mobile,
                                          :phone, :web, :email, :postal_code,
                                          :country, :city, :latitude, :longitude)
+  end
+
+  def find_physical_entity
+    @entity = PhysicalEntity.find(params[:id])
   end
 
 end

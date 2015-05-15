@@ -1,0 +1,19 @@
+<div id="main-table-wrapper">
+    <table class="table" id="results">
+        <tr>
+            <th>#</th>
+            <th><i class="fa fa-sort"></i>&nbsp;&nbsp;Naziv pravnog lica</th>
+            <th>Link za detalje</th>
+        </tr>
+        <% counter = 0 %>
+        <% @entities.each do |entity| %>
+            <tr>
+                <td><%= counter += 1 %></td>
+                <td><%= entity.name %></td>
+                <td><i class="fa fa-user"></i>&nbsp;
+                    <%= link_to 'Kontakt podaci', legal_entity_path(entity) %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</div>

@@ -8,8 +8,8 @@
 
         <table class="table" id="user-profile-table">
             <tr>
-                <th style="width: 50%; text-align: right;">Opšti</th>
-                <th style="width: 50%; text-align: left;">podaci</th>
+                <th style="text-align: right;">Opšti</th>
+                <th style="text-align: left;">podaci</th>
             </tr>
             <tr>
                 <td><i class="fa fa-user"></i>&nbsp;&nbsp;Korisničko ime:</td>
@@ -17,15 +17,15 @@
             </tr>
             <tr>
                 <td><i class="fa fa-user"></i>&nbsp;&nbsp;Ime:</td>
-                <td><?php echo $user['ime']; ?></td>
+                <td><%= @user.first_name %></td>
             </tr>
             <tr>
                 <td><i class="fa fa-user"></i>&nbsp;&nbsp;Prezime:</td>
-                <td><?php echo $user['prezime']; ?></td>
+                <td><%= @user.last_name %></td>
             </tr>
             <tr>
                 <td><i class="fa fa-user"></i>&nbsp;&nbsp;Tip korisnika:</td>
-                <td><?php echo $user['tip_korisnika']; ?></td>
+                <td></td>
             </tr>
             <tr>
                 <td><i class="fa fa-envelope"></i>&nbsp;&nbsp;E-mail:</td>
@@ -33,11 +33,11 @@
             </tr>
             <tr>
                 <td><i class="fa fa-phone"></i>&nbsp;&nbsp;Broj telefona:</td>
-                <td><?php echo $user['broj_telefona'] ? $user['broj_telefona'] : '-' ?></td>
+                <td><%= @user.phone %></td>
             </tr>
             <tr>
                 <td><i class="fa fa-globe"></i>&nbsp;&nbsp;Web:</td>
-                <td><?php echo $user['web'] ? $user['web'] : '-' ?></td>
+                <td><%= @user.web %></td>
             </tr>
         </table>
 

@@ -1,0 +1,63 @@
+<%= form_for @user, :html => { id: 'user-edit-form' } do |f| %>
+
+    <div class="col1">
+
+        <div class="label-wrapper">
+            <label>Korisničko ime</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-user"></i></span>
+            <%= f.text_field :username, name: 'username' %>
+        </div>
+
+        <div class="label-wrapper">
+            <label>Ime</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-user"></i></span>
+            <%= f.text_field :first_name, name: 'first_name' %>
+        </div>
+
+        <div class="label-wrapper">
+            <label>Prezime</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-user"></i></span>
+            <%= f.text_field :last_name, name: 'last_name' %>
+        </div>
+
+        <div class="input-wrapper" id="register-submit-wrapper">
+            <%= f.submit 'Sačuvaj izmjene', name: 'user-edit', id: 'submit-user-edit' %>
+        </div>
+
+    </div>
+
+    <div class="col2">
+
+        <div class="label-wrapper">
+            <label>E-mail</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-envelope"></i></span>
+            <%= f.text_field :email, name: 'email' %>
+        </div>
+
+        <div class="label-wrapper">
+            <label>Broj telefona</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-phone"></i></span>
+            <%= f.text_field :phone, name: 'phone' %>
+        </div>
+
+        <div class="label-wrapper">
+            <label>Web</label>
+        </div>
+        <div class="input-wrapper">
+            <span class="form-icon"><i class="fa fa-globe"></i></span>
+            <%= f.text_field :web, name: 'web' %>
+        </div>
+
+    </div>
+
+<% end %>

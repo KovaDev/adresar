@@ -1,3 +1,104 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* ========== USER PROFILE ========== */
+
+.profile-value {
+  padding-bottom: 20px;
+}
+
+#user-profile-table td {
+  text-align: left;
+  padding-left: 10px;
+}
+
+#user-profile-table th {
+  width: 50%;
+}
+
+#profile-nav {
+  float: left;
+  width: 30%;
+}
+
+#profile-menu-trigger {
+  width: 200px;
+  height: 40px;
+  background: #444;
+  color: #f15755;
+  margin-top: 10px;
+
+  span {
+    float: left;
+    padding-left: 10px;
+  }
+
+  i {
+    float: right;
+    padding-right: 10px;
+  }
+}
+
+#user-profile-nav {
+  display: none;
+}
+
+.profile-menu-wrapper nav ul {
+  display: block;
+
+  li {
+    display: block;
+    height: 40px;
+    width: 200px;
+    margin-top: 5px;
+    background: #444;
+    color: #f15755;
+
+    a {
+      display: block;
+      width: 190px;
+      padding-top: 10px;
+      padding-left: 10px;
+      background: #444;
+      color: #f15755;
+    }
+  }
+}
+
+#avatar img {
+  width: 200px;
+  height: 200px;
+}
+
+#profile-info {
+  float: left;
+  width: 70%;
+}
+
+.profile-title {
+  padding-bottom: 20px;
+  width: auto;
+  text-align: center;
+
+  h1 {
+    padding-bottom: 10px;
+  }
+}
+
+.profile-label {
+  width: 30%;
+  float: left;
+}
+
+.profile-value {
+  width: 70%;
+  float: left;
+}
+
+#profile-hr {
+  color: #f15755;
+  background: #f15755;
+  height: 5px;
+  margin-bottom: 20px;
+}
+
+#user-edit-form-wrapper {
+  width: 50%;
+}

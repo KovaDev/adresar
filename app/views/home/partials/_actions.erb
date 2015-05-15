@@ -1,0 +1,58 @@
+<div id="actions-wrapper">
+
+    <table class="table table2" id="">
+        <tr>
+            <th><i class="fa fa-search">&nbsp;&nbsp;</i>Subjekat pretrage</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cell">
+                    <input type="radio" name="subjekat" value="fizicka_lica"><label>Pravna lica</label>
+                </div>
+                <div class="cell">
+                    <input type="radio" name="subjekat" value="fizicka_lica"><label>Fizička lica</label>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table table2" id="search-parameter">
+        <tr>
+            <th><i class="fa fa-search">&nbsp;&nbsp;</i>Parametar pretrage</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="full-cell" id="">
+                    <%= radio_button_tag :criteria, 'country' %>
+                    <%= label_tag :country, "Država" %>
+                </div>
+                <div class="full-cell" id="">
+                    <%= radio_button_tag :criteria, 'city' %>
+                    <%= label_tag :city, "Grad" %>
+                </div>
+                <div class="full-cell" id="">
+                    <%= radio_button_tag :criteria, 'name' %>
+                    <%= label_tag :name, "Naziv" %>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table table2" id="search-parameter">
+        <tr>
+            <th><i class="fa fa-sort-alpha-asc">&nbsp;&nbsp;</i>Sortiranje po nazivu/prezimenu</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="full-cell">
+                    <%= radio_button_tag :order, 'asc', { :checked => true } %>
+                    <%= label_tag :asc, "Rastući redoslijed" %>
+                </div>
+                <div class="full-cell">
+                    <%= radio_button_tag :order, 'desc' %>
+                    <%= label_tag :desc, "Opadajući redoslijed" %>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

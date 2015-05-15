@@ -6,14 +6,15 @@
         <nav id="main-nav" class="nav">
             <a href="#" id="pull"><i class="fa fa-bars">&nbsp;</i>Meni</a>
             <ul>
-                <li><a href="<%= root_path %>"><i class="fa fa-sign-in">&nbsp;</i>Pocetna</a></li>
+                <li><a href="<%= root_path %>"><i class="fa fa-home">&nbsp;</i>Početna</a></li>
                 <% if user_signed_in? %>
                     <li>
                         <a href="<%= profile_path({:id => current_user.id}) %>">
-                            <i class="fa fa-sign-in">&nbsp;</i><%= current_user.username %></a>
+                            <i class="fa fa-user">&nbsp;</i><%= current_user.username %></a>
                     </li>
                     <li>
-                        <%= link_to 'Odjava', :destroy_user_session, :method => :delete %>
+                        <%= link_to '<i class="fa fa-sign-out">&nbsp;</i> Odjava'.html_safe,
+                                    :destroy_user_session, :method => :delete %>
                     </li>
                 <% else %>
                     <li>

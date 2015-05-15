@@ -1,6 +1,8 @@
-class LegalEntitiesController < ApplicationController
+class LegalEntitiesController < BaseController
 
+  before_filter :authenticate_user!
   before_action :admin_only, only: [:new, :edit, :destroy]
+  before_action :find_legal_entity, only: [:show, :edit, :update, :destroy]
 
   def new
     @entity = LegalEntity.new
@@ -16,15 +18,12 @@ class LegalEntitiesController < ApplicationController
   end
 
   def show
-    @entity = LegalEntity.find(params[:id])
   end
 
   def edit
-    @entity = LegalEntity.find(params[:id])
   end
 
   def update
-    @entity = LegalEntity.find(params[:id])
     if @entity.update_attributes(legal_entity_params)
       redirect_to @entity
     else
@@ -33,6 +32,8 @@ class LegalEntitiesController < ApplicationController
   end
 
   def destroy
+    @entity.destroy
+    redirect_to root_path
   end
 
   private
@@ -41,6 +42,10 @@ class LegalEntitiesController < ApplicationController
       params.require(:legal_entity).permit(:name, :owner, :address, :mobile,
                                            :phone, :web, :email, :postal_code,
                                            :country, :city, :fax, :latitude, :longitude)
+    end
+
+    def find_legal_entity
+      @entity = LegalEntity.find(params[:id])
     end
 
 end

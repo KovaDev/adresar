@@ -52,7 +52,9 @@
             <td><i class="fa fa-cog"></i>&nbsp;&nbsp;Akcije</td>
             <td style="text-align: right;">
                 <a href="<%= edit_legal_entity_path %>"><i class="fa fa-pencil">&nbsp;</i>Izmijeni podatke</a>
-                |<a href="#" class="delete"><i class="fa fa-trash">&nbsp;</i>Obriši subjekat</a>
+                | <%= link_to '<i class="fa fa-trash">&nbsp;</i>Obriši subjekat'.html_safe,
+                              legal_entity_path(@entity.id), method: :delete,
+                              data: { confirm: "Da li ste sigurni da zelite da obrisete subjekat?" } %>
             </td>
         </tr>
         <% end %>
